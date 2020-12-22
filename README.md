@@ -12,6 +12,10 @@ By the end of the module, you will have made beautiful bill splitting, tip calcu
 
 ![goal app](./images/goal.gif)
 
+This is the result:
+
+![goal app](./images/working.gif)
+
 ## Step 1: Clone the Starting Project
 
 Clone this project using Xcode.
