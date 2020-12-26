@@ -63,7 +63,7 @@
                                                             <action selector="tipChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qdJ-J7-h4o"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtR-dU-EKt">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtR-dU-EKt">
                                                         <rect key="frame" x="244.5" y="0.0" width="90.5" height="54"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="54" id="uDJ-4b-7bJ"/>
@@ -177,7 +177,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2m-Cs-fJo"/>
-                                    <segue destination="Dnf-m2-FPm" kind="presentation" id="avb-lx-pL9"/>
+                                    <segue destination="Dnf-m2-FPm" kind="presentation" identifier="resultSegue" id="avb-lx-pL9"/>
                                 </connections>
                             </button>
                         </subviews>
