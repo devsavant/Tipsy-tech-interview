@@ -31,6 +31,8 @@ class CalculatorViewController: UIViewController {
     @IBAction func tipChanged(_ sender: UIButton) {
         print ("onTipChanged pressed tag => \(sender.tag)")
         
+        billTextField.resignFirstResponder()
+        
         sender.isSelected = true
         
         if (sender.tag == 0) {
@@ -60,7 +62,15 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: Any) {
+        let amountValue = Double(billTextField.text ??  "0.0")
         print("Number of people to split: \(peopleSplit)")
+        print("Amount value: \(amountValue ?? 0.0)")
+        
+        let tipValue = amountValue! * pctAmount
+        let totalAmount = (amountValue! + tipValue) / Double(peopleSplit)
+        
+        print("Total amount is: \(totalAmount)")
+        
     }
     
 }
