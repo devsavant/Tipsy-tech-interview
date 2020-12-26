@@ -21,11 +21,13 @@ class CalculatorViewController: UIViewController {
     var pctAmount = 0.0
     var peopleSplit = 1
     var totalAmount = 0.0
+    var tipTotalValue = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         splitNumberLabel.text = "\(peopleSplit)"
         peopleStepper.minimumValue = 1
+        peopleStepper.maximumValue = 25
         // Do any additional setup after loading the view.
     }
 
@@ -67,10 +69,11 @@ class CalculatorViewController: UIViewController {
         print("Number of people to split: \(peopleSplit)")
         print("Amount value: \(amountValue ?? 0.0)")
         
-        let tipValue = amountValue! * pctAmount
-        totalAmount = (amountValue! + tipValue) / Double(peopleSplit)
+//        let tipValue = amountValue! * pctAmount
+        totalAmount = (amountValue!) / Double(peopleSplit)
+        tipTotalValue = (totalAmount * pctAmount) + totalAmount
         
-        print("Total amount is: \(totalAmount)")
+        print("Total amount is: \(tipTotalValue)")
         
     }
     
@@ -78,7 +81,7 @@ class CalculatorViewController: UIViewController {
         print("Preparing for segue...")
         if segue.destination is ResultsViewController {
             let controller = segue.destination as? ResultsViewController
-            controller?.resultAmount = totalAmount
+            controller?.resultAmount = tipTotalValue
             controller?.totalPeople = peopleSplit
             controller?.pct = pctAmount
         }
