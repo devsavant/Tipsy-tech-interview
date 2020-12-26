@@ -20,6 +20,7 @@ class CalculatorViewController: UIViewController {
     
     var pctAmount = 0.0
     var peopleSplit = 1
+    var totalAmount = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,11 +68,23 @@ class CalculatorViewController: UIViewController {
         print("Amount value: \(amountValue ?? 0.0)")
         
         let tipValue = amountValue! * pctAmount
-        let totalAmount = (amountValue! + tipValue) / Double(peopleSplit)
+        totalAmount = (amountValue! + tipValue) / Double(peopleSplit)
         
         print("Total amount is: \(totalAmount)")
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Preparing for segue...")
+        if segue.destination is ResultsViewController {
+            let controller = segue.destination as? ResultsViewController
+            controller?.resultAmount = totalAmount
+            controller?.totalPeople = peopleSplit
+            controller?.pct = pctAmount
+        }
+    }
+    
+    
     
 }
 
