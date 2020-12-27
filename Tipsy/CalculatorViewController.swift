@@ -28,6 +28,10 @@ class CalculatorViewController: UIViewController {
         splitNumberLabel.text = "\(peopleSplit)"
         peopleStepper.minimumValue = 1
         peopleStepper.maximumValue = 25
+        
+        zeroPctButton.isSelected = false
+        tenPctButton.isSelected = false
+        twentyPctButton.isSelected = false
         // Do any additional setup after loading the view.
     }
 
@@ -69,8 +73,7 @@ class CalculatorViewController: UIViewController {
         print("Number of people to split: \(peopleSplit)")
         print("Amount value: \(amountValue ?? 0.0)")
         
-//        let tipValue = amountValue! * pctAmount
-        totalAmount = (amountValue!) / Double(peopleSplit)
+        totalAmount = (amountValue ?? 0.0) / Double(peopleSplit)
         tipTotalValue = (totalAmount * pctAmount) + totalAmount
         
         print("Total amount is: \(tipTotalValue)")
