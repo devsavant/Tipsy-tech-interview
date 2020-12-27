@@ -128,4 +128,8 @@ Press the Calculate button and you should get the value 30.12 printed in the con
 * [optional] You are free to improve the UI with any you consider a better practice or tool.
 * [optional] You are free to change the layout with an autolayout approach.
 
+## Complete app working
+
+![tipsy working](./images/test_output.gif)
+
 > Compiled and structured by BlisS, creation attribution to angelabauer
