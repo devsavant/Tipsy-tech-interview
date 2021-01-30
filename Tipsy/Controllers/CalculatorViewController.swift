@@ -31,6 +31,8 @@ class CalculatorViewController: UIViewController {
         } else if twentyPctButton.isSelected {
             tipSelected = 0.2
         }
+        
+        billTextField.endEditing(true)
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
@@ -39,8 +41,18 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        print("Tip: \(tipSelected)")
-        print("Split Number: \(splitNumberSelected)")
+        if let billTotal = Double(billTextField.text!) {
+            let totalPerPerson = billTotal * (1 + tipSelected) / Double(splitNumberSelected)
+            print("\(totalPerPerson.roundToPlaces(2))")
+        } else {
+            print("Not a valid number: \(billTextField.text!)")
+        }
     }
 }
 
+extension Double {
+    func roundToPlaces(_ places:Int) -> Double {
+        let multiplier = pow(10.0, Double(places))
+        return (multiplier * self).rounded() / multiplier
+    }
+}
