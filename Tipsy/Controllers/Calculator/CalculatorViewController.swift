@@ -18,7 +18,7 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var splitNumberLabel: UILabel!
     @IBOutlet weak var numberOfPeopleStepper: UIStepper!
     
-    let segueResultsId = "segueResults"
+    let segueResultsId = "calculatorSegueResultsId"
     var selectedTip = 0
     var resultSplit : ResultSplit = ResultSplit()
     
