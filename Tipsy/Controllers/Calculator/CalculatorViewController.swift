@@ -97,7 +97,7 @@ class CalculatorViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == segueResultsId){
-            let resultsController = segue.destination as! ResultsViewController
+            let resultsController = segue.destination as! CalculatorResultsViewController
             resultsController.resultSplit = resultSplit
         }
     }

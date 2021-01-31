@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultsViewController: UIViewController {
+class CalculatorResultsViewController: UIViewController {
     
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var settingsLabel: UILabel!
