@@ -23,7 +23,7 @@ class CalculatorViewController: UIViewController {
     var resultSplit : ResultSplit = ResultSplit()
     
     override func viewDidLoad() {
-         self.hideKeyboardWhenTappedAround()
+        self.hideKeyboardWhenTappedAround()
         setUpPercentageButtons()
     }
     
@@ -31,7 +31,7 @@ class CalculatorViewController: UIViewController {
         //Dafault
         self.tenPctButton.isSelected = true
         selectedTip = 10
-       
+        
         self.zeroPctButton.isSelected = false
         self.twentyPctButton.isSelected = false
         
