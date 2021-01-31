@@ -23,16 +23,19 @@ class CalculatorViewController: UIViewController {
     var resultSplit : ResultSplit = ResultSplit()
     
     override func viewDidLoad() {
+         self.hideKeyboardWhenTappedAround()
         setUpPercentageButtons()
     }
     
     fileprivate func setUpPercentageButtons() {
-        self.hideKeyboardWhenTappedAround()
+        //Dafault
         self.tenPctButton.isSelected = true
         selectedTip = 10
        
         self.zeroPctButton.isSelected = false
         self.twentyPctButton.isSelected = false
+        
+        //Tags
         self.zeroPctButton.tag = 0
         self.tenPctButton.tag = 10
         self.twentyPctButton.tag = 20
@@ -63,12 +66,12 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func calculatePressed(_ sender: Any) {
         
-        guard let cost = Double(billTextField.text!), let numberOfPeople = Double(splitNumberLabel.text!) else {
-            openAlert()
+        guard let billValue = Double(billTextField.text!), let numberOfPeople = Double(splitNumberLabel.text!) else {
+            showBillValueAlert()
             return
         }
         
-        var total = cost
+        var total = billValue
         switch selectedTip {
         case 10:
             total *= 1.10
@@ -83,7 +86,7 @@ class CalculatorViewController: UIViewController {
         performSegue(withIdentifier: segueResultsId, sender: nil)
     }
     
-    func openAlert(){
+    func showBillValueAlert(){
         let alertcontroller = UIAlertController()
         alertcontroller.message = "Please add the bill value."
         
