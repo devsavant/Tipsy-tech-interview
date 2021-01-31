@@ -31,3 +31,10 @@ class ResultsViewController: UIViewController {
     }
     
 }
+
+extension Double {
+    func roundToPlaces(_ places:Int) -> Double {
+        let multiplier = pow(10.0, Double(places))
+        return (multiplier * self).rounded() / multiplier
+    }
+}
